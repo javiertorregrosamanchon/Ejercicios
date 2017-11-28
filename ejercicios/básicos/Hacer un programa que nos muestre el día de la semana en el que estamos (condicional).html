@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Hacer un programa que nos muestre el día de la semana en el que estamos (condicional)</h1>
+<p id="demo"></p>
+<script type="text/javascript">
+var a = new Date().getDay();
+switch (a){
+case 0:
+var dia = "Domingo"; 
+break;
+case 1:
+var dia = "Lunes"; 
+break;
+case 2:
+var dia = "Martes"; 
+break;
+case 3:
+var dia = "Miércoles"; 
+break;
+case 4:
+var dia = "Jueves"; 
+break;
+case 5:
+var dia = "Viernes"; 
+break;
+case 6:
+var dia = "Sábado"; 
+break;
+}
+document.getElementById("demo").innerHTML = "Hoy es: " + dia;
+</script>
+</body>
+</html>
+
+

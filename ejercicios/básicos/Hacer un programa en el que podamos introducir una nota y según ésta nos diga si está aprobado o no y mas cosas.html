@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Hacer un programa en el que podamos introducir una nota y según ésta nos diga si está aprobado o no.</h1>
+<p>Introduce tu nota y pulsa el botón:</p>
+<input id="nota" value="0" />
+<button onclick="myFunction()">Púlsame</button>
+<p id="demo"></p>
+<script type="text/javascript">
+function myFunction() {
+var nota = document.getElementById("nota").value;
+var respuesta = "";
+if (nota >= 5 && nota < 7) {
+respuesta = "Aprobado";
+}else if (nota >= 7 && nota < 9) {
+respuesta = "Notable";
+}else if (nota >= 9 && nota < 10) {
+respuesta = "Sobresaliente";
+}else if (nota == 10) {
+respuesta = "Matricula de Honor";
+}else if (nota == "" || nota > 10) {
+respuesta = "Entrada no valida";
+}else {
+respuesta = "Suspendido";
+}
+document.getElementById("demo").innerHTML = respuesta;
+}
+</script>
+</body>
+</html>

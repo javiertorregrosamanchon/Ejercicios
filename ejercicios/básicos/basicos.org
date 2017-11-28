@@ -1,0 +1,473 @@
+#+TITLE: Ejercicios básicos de Javascript
+#+AUTHOR: Patricio Martínez
+
+* Introducción 
+
+1. Hacer un documento html que muestre un mensaje "hola mundo"
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Hacer un documento html que muestre un mensaje "hola mundo"</h2>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML = "Hola Mundo";
+</script>
+</body>
+</html>
+
+Operadores
+
+2. Hacer lo mismo pero con una función dentro de <head></head>
+
+<html>
+<head>
+<script>
+function myFunction(){
+document.getElementById("demo").innerHTML= "Hola Mundo";
+}
+</script>
+</head>
+<body>
+<h2>Hacer lo mismo pero con una función dentro de <head></head></h2>
+<p id="demo"></p>
+<script>myFunction()</script>
+</body>
+</html>
+
+3. Hacer lo mismo pero con el código javascript fuera del documento html
+
+<html>
+<head>
+</head>
+<body>
+<h2>Hacer lo mismo pero con el código javascript fuera del documento html</h2>
+<p id="demo"></p>
+<script src="Ejercicio3.js"></script>
+</body>
+</html>
+
+4. Mostrar un mensaje "hola mundo" en una ventana emergente
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Mostrar un mensaje "hola mundo" en una ventana emergente</h1>
+<script>
+alert("Hola Mundo");
+</script>
+</body>
+</html>
+
+5. Mostrar un mensaje "hola mundo" en la consola del navegador
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Mostrar un mensaje "hola mundo" en la consola del navegador</h1>
+<script>
+console.log("Hola Mundo");
+</script>
+</body>
+</html>
+
+* Variables 
+
+1. Realizar un programa con dos variables "nombre" y "apellidos" y los muestre juntos.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Realizar un programa con dos variables "nombre" y "apellidos" y los muestre juntos.</h2>
+<p id="demo"></p>
+<script>
+var Nombre, Apellidos, z;
+Nombre = "Javier ";
+Apellidos = "Torregrosa Manchón";
+z = Nombre + Apellidos;
+document.getElementById("demo").innerHTML = z;
+</script>
+</body>
+</html>
+
+2. Crear un documento html con un comentario en una línea y otro que sea de varias líneas
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Crear un documento html con un comentario en una línea y otro que sea de varias líneas</h2>
+<p id="demo"></p>
+<!-- Hola esto es un comentario.... -->
+<!-- que sigue en la linea de abajo. -->
+<script>
+var Nombre, Apellidos, z;
+Nombre = "Javier ";
+Apellidos = "Torregrosa Manchón";
+/*Hola esto es un comentario de varias lineas
+en JavaScript*/
+z = Nombre + Apellidos;
+document.getElementById("demo").innerHTML = z; //esto es el ejercicio anterior
+</script>
+</body>
+</html>
+
+3. Realizar un programa que nos muestre la suma de tres variables
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Realizar un programa que nos muestre la suma de tres variables</h2>
+<p id="demo"></p>
+<script>
+var x, y, z, suma;
+x = 1;
+y = 2;
+z = 3;
+suma = x + y + z;
+document.getElementById("demo").innerHTML = suma;
+</script>
+</body>
+</html>
+
+* Funciones 
+
+1. Crear una función que nos muestre la potencia de dos números
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Crear una función que nos muestre la potencia de dos números</h2>
+<p id="demo"></p>
+<script>
+var x, y;
+x = 3;
+y = 2;
+document.getElementById("demo").innerHTML = Math.pow (x , y);
+</script>
+</body>
+</html>
+
+
+2. Crear una función que transforme grados Fahrenheit a Celsius y nos lo muestre
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Crear una función que transforme grados Fahrenheit a Celsius y nos lo muestre</h2>
+<p id="demo"></p>
+<script>
+function toCelsius(f) {
+return (5/9) * (f-32);
+}
+document.getElementById("demo").innerHTML = toCelsius(86);
+</script>
+</body>
+</html>
+
+* Cadenas de texto
+1. Hacer un programa que sustituya una cadena "Yo amo a mi perro" por "Yo amo a mi gato"
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hacer un programa que sustituya una cadena "Yo amo a mi perro" por "Yo amo a mi gato"</h1>
+<p id="demo">Yo amo a mi perro</p>
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = 'Yo amo a mi gata'">
+Púlsame y cambio</button>
+</body>
+</html>
+
+2. Hacer un programa que ponga en mayúsculas la frase "Emacs es el mejor programa del mundo"
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejecutando una función cuando redimensionamos la ventana</title>
+<script type="text/javascript">
+var text1, text3;
+text1 = "Emacs es el mejor programa del mundo";
+text2 = text1.toUpperCase();
+</script>
+</head>
+<body>
+<h1>Hacer un programa que ponga en mayúsculas la frase "Emacs es el mejor programa del mundo"</h1>
+<button type="button" onclick="document.getElementById('demo').innerHTML = text2">Púlsame y me hago grande</button>
+<p id="demo">Emacs es el mejor programa del mundo</p>
+</body>
+</html>
+
+* Fechas
+
+1. Hacer un programa que nos muestre el día de la semana en el que estamos.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Hacer un programa que nos muestre el día de la semana en el que estamos</h1>
+<p id="demo"></p>
+<script type="text/javascript">
+var a = new Date().getDay();
+var dia = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+document.getElementById("demo").innerHTML = "Hoy es: " + dia[a];
+</script>
+</body>
+</html>
+
+* Arrays 
+
+1. Hacer un programa que nos muestre los meses enero, agosto y noviembre  de todos los meses del año.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Hacer un programa que nos muestre los meses enero, agosto y noviembre  de todos los meses del año.</h1>
+<script type="text/javascript">
+var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto" , "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
+
+document.write(meses [0]);
+</script>
+<script type="text/javascript">
+document.write(meses [7]);
+</script>
+<script type="text/javascript">
+document.write(meses [10]);
+</script>
+</body>
+</html>
+
+2. Crear un array con tres días de la semana y añadirle posteriormente los días faltantes y que los muestre todos
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Crear un array con tres días de la semana y añadirle posteriormente los días faltantes y que los muestre todos</h1>
+<script type="text/javascript">
+var tresDias = ["Lunes", "Martes" , "Miércoles" ];
+var restoDias = ["Jueves","Viernes", "Sábado", "Domingo"]
+var junto = tresDias + restoDias;
+
+document.write(tresDias);
+</script>
+</br>
+<script type="text/javascript">
+document.write(restoDias);
+</script>
+</br>
+<script type="text/javascript">
+document.write(junto);
+</script>
+</script>
+</body>
+</html>
+
+
+3. Crear un array de frutas y ordenarlas por orden alfabético
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Crear un array de frutas y ordenarlas por orden alfabético</h1>
+<script type="text/javascript">
+var frutas = ["Naranja", "Pera" , "Limón" ];
+</script>
+<button type="button" onclick="document.getElementById('demo').innerHTML = frutas.sort()">Ordenar</button>
+<p id="demo">Naranja,Pera,Limón</p>
+</body>
+</html>
+
+* Condicionales 
+
+1. Crear un programa donde podamos introducir una hora y comprobandola con las 12 del mediodía nos indique si son buenos días o buenas tardes.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Crear un programa donde podamos introducir una hora y comprobandola con las 12 del mediodía nos indique si son buenos días o buenas tardes.</h1>
+<p>Introduce la hora y pulsa el botón:</p>
+<input id="hora" value="0" />
+<button onclick="myFunction()">Púlsame</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+var hora = document.getElementById("hora").value;
+var saludo;
+if (hora < 13) {
+saludo = "Buenos días";
+} else if (hora == "" || hora > 23){
+saludo = "Hora no válida";
+}else {
+saludo = "Buenos tardes";
+}
+document.getElementById("demo").innerHTML = saludo;
+}
+</script>
+</body>
+</html>
+
+2. Hacer un programa que nos diga el día de la semana en el que nos encontramos
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Hacer un programa que nos muestre el día de la semana en el que estamos (condicional)</h1>
+<p id="demo"></p>
+<script type="text/javascript">
+var a = new Date().getDay();
+switch (a){
+case 0:
+var dia = "Domingo"; 
+break;
+case 1:
+var dia = "Lunes"; 
+break;
+case 2:
+var dia = "Martes"; 
+break;
+case 3:
+var dia = "Miércoles"; 
+break;
+case 4:
+var dia = "Jueves"; 
+break;
+case 5:
+var dia = "Viernes"; 
+break;
+case 6:
+var dia = "Sábado"; 
+break;
+}
+document.getElementById("demo").innerHTML = "Hoy es: " + dia;
+</script>
+</body>
+</html>
+
+3. Hacer un programa en el que podamos introducir una nota y según ésta nos diga si está aprobado o no.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Hacer un programa en el que podamos introducir una nota y según ésta nos diga si está aprobado o no.</h1>
+<p>Introduce tu nota y pulsa el botón:</p>
+<input id="nota" value="0" />
+<button onclick="myFunction()">Púlsame</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+var nota = document.getElementById("nota").value;
+var saludo;
+if (nota < 5 && nota != "") {
+respuesta = "Suspendido";
+} else if ( nota == "" || nota > 10){
+respuesta = "Nota no válida";
+}else {
+respuesta = "Aprobado";
+}
+document.getElementById("demo").innerHTML = respuesta;
+}
+</script>
+</body>
+</html>
+
+4. Hacer un programa similar al anterior pero que además nos diga si está suspendo, aprobado, notable, sobresaliente o matrícula de honor.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Hacer un programa en el que podamos introducir una nota y según ésta nos diga si está aprobado o no.</h1>
+<p>Introduce tu nota y pulsa el botón:</p>
+<input id="nota" value="0" />
+<button onclick="myFunction()">Púlsame</button>
+<p id="demo"></p>
+<script type="text/javascript">
+function myFunction() {
+var nota = document.getElementById("nota").value;
+var respuesta = "";
+if (nota >= 5 && nota < 7) {
+respuesta = "Aprobado";
+}else if (nota >= 7 && nota < 9) {
+respuesta = "Notable";
+}else if (nota >= 9 && nota < 10) {
+respuesta = "Sobresaliente";
+}else if (nota == 10) {
+respuesta = "Matricula de Honor";
+}else if (nota == "" || nota > 10) {
+respuesta = "Entrada no valida";
+}else {
+respuesta = "Suspendido";
+}
+document.getElementById("demo").innerHTML = respuesta;
+}
+</script>
+</body>
+</html>
+
+5. Hacer un programa que nos muestre todos los días de la semana.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Hacer un programa que nos muestre todos los días de la semana.<h2>
+<p id="demo"></p>
+<script>
+var a = 0;
+var dia = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"]
+do {
+  document.getElementById("demo").innerHTML += dia[a];
+  a++;
+} while (a < 7);
+</script>
+</body>
+</html>
+
+6. Hacer un programa que nos muestre los 100 primeros números.
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Hacer un programa que nos muestre los 100 primeros números</h2>
+<p id="demo"></p>
+<script>
+var numeros;
+numeros = 0;
+do {
+  document.getElementById("demo").innerHTML += numeros;
+  numeros++;
+} while (numeros < 100);
+
+</script>
+</body>
+</html>

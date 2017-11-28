@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="utf-8" />
+      <title>Estructuras de control ejercicio 5</title>
+	  <script>
+		function comprobar(){
+			var fechaN, diaMes, mes;
+			fechaN = new Date(document.getElementById("fecha").value);
+			diaMes = fechaN.getDate();
+			mes = fechaN.getMonth();
+			if (diaMes == 25 && mes == 11){
+				document.getElementById("demo").innerHTML = "Es navidad";
+				document.getElementById("demo").style.color = "red";
+			}else if(fechaN == "Invalid Date") {
+				alert("Error, fecha no válida");
+			}else {
+				document.getElementById("demo").innerHTML = "No es navidad";
+				document.getElementById("demo").style.color = "black";
+			}
+		}
+	  </script>
+   </head>
+   <body>
+	<h1>Introduce una fecha para ver si es navidad:</h1>
+	
+	<input id="fecha" type="date">
+    <button onclick="comprobar()">Comprobar</button>
+	<p id="demo"></p>
+	<script>
+
+	</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicios</title>
+</head>
+<body>
+<h1>Crear un programa donde podamos introducir una hora y comprobandola con las 12 del mediodía nos indique si son buenos días o buenas tardes.</h1>
+<p>Introduce la hora y pulsa el botón:</p>
+<input id="hora" value="0" />
+<button onclick="myFunction()">Púlsame</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+var hora = document.getElementById("hora").value;
+var saludo;
+if (hora < 13) {
+saludo = "Buenos días";
+} else if (hora == "" || hora > 23){
+saludo = "Hora no válida";
+}else {
+saludo = "Buenos tardes";
+}
+document.getElementById("demo").innerHTML = saludo;
+}
+</script>
+</body>
+</html>
+
+
